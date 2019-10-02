@@ -11,10 +11,9 @@ public class Service {
   void getTemperature() {
     Scanner sc = new Scanner(System.in);
     System.out.println("Please input temperature");
-    double temp = sc.nextDouble();
-    Scanner sq = new Scanner(System.in);
-    System.out.println("Please input type of temperature");
-    String typeT = sq.nextLine();
+    String temperature = sc.nextLine();
+    int temp = Integer.parseInt(temperature.replaceAll("[^0-9]", ""));
+    String typeT = temperature.substring(temperature.length() - 1);
 
     switch (typeT) {
       case "C":
